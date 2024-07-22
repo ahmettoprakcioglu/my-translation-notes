@@ -5,12 +5,12 @@ const AppLayout = () => {
   return (
     <div className="flex flex-col h-screen">
       <header><Header /></header>
-      <main className="flex-1 p-8 bg-slate-800 h-screen">
-        <div className='class="grid grid-cols-2 gap-4"'>
-          <div className="col-span-2 ...">
+      <main className="flex-1 p-8 h-screen">
+        <div className='flex flex-col gap-4 md:grid grid-cols-3'>
+          <div className="md:col-span-2 ...">
             <Form />
           </div>
-          <div className="...">05</div>
+          <div className="bg-slate-300 rounded-md md:...">05</div>
         </div>
       </main>
     </div>

@@ -14,10 +14,10 @@ const Form = () => {
           <div className="label">
             <span className="label-text">Translation</span>
           </div>
-          <input type="text" id="translation" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+          <input type="text" id="translation" placeholder="Hola!" className="input input-bordered w-full max-w-xs" />
         </label>
       </div>
-      <div className="flex justify-end gap-4">
+      <div className="flex gap-4">
         <button className="btn btn-active btn-neutral" type="reset">Cancel</button>
         <button className="btn btn-active">Add Note</button>
       </div>

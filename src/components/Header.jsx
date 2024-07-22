@@ -1,4 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+
 const Header = () => {
+  const navigate = useNavigate();
+  const handleNavigate = to => navigate(to);
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -20,8 +25,8 @@ const Header = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Homepage</a></li>
-            <li><a>My Notes</a></li>
+            <li><a onClick={() => handleNavigate('/home')}>Homepage</a></li>
+            <li><a onClick={() => handleNavigate('/my-notes')}>My Notes</a></li>
           </ul>
         </div>
       </div>

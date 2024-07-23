@@ -1,4 +1,5 @@
 import Form from './Form';
+import RandomWordGenerator from './RandomWordGenerator';
 
 const HomePage = () => {
   return (
@@ -6,7 +7,9 @@ const HomePage = () => {
       <div className="md:col-span-2 ...">
         <Form />
       </div>
-      <div className="bg-slate-300 rounded-md md:...">05</div>
+      <div className="rounded-md md:...">
+        <RandomWordGenerator />
+      </div>
     </div>
   );
 };

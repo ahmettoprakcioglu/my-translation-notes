@@ -1,6 +1,10 @@
+import Table from './Table';
+
 const MyNotes = () => {
   return (
-    <div>My Notes</div>
+    <div>
+      <Table />
+    </div>
   );
 };
 

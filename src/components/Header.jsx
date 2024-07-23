@@ -31,7 +31,7 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">My Translation Notes</a>
+        <a className="btn btn-ghost text-xl" onClick={() => handleNavigate('/home')}>My Translation Notes</a>
       </div>
     </div>
   );

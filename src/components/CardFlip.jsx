@@ -18,10 +18,10 @@ const CardFlip = ({
       ) : (
         <ReactCardFlip flipDirection="horizontal" containerClassName='h-full' isFlipped={isFlipped}>
           <div className='h-full flex items-center justify-center text-primary-content font-bold'>
-            <h1>{originalWord || 'Please click the Pick button'}</h1>
+            <h1 className='p-4 break-all ...'>{originalWord || 'Please click the Pick button'}</h1>
           </div>
           <div className='h-full flex items-center justify-center text-primary-content font-bold'>
-            <h1>{translation}</h1>
+            <h1 className='p-4 break-all ...'>{translation}</h1>
           </div>
         </ReactCardFlip>
       )}

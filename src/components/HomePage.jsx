@@ -15,15 +15,15 @@ const HomePage = () => {
   return (
     <>
       {isLoading ? (
-        <div className='flex flex-col flex-1 justify-center items-center h-full'>
+        <div className='flex flex-col flex-1 justify-center items-center'>
           <span className="loading loading-ring loading-lg"></span>
         </div>
       ) : (
-        <div className='flex flex-col gap-4 md:grid grid-cols-3'>
-          <div className="md:col-span-2 ...">
+        <div className='flex flex-col gap-4 h-full md:grid grid-cols-3 md:h-auto'>
+          <div className="h-1/2 md:col-span-2 h-auto ...">
             <Form />
           </div>
-          <div className="rounded-md md:...">
+          <div className="h-1/2 rounded-md md:h-auto ...">
             <RandomWordGenerator translationNotes={translationNotes} />
           </div>
         </div>

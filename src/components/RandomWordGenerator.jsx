@@ -18,7 +18,7 @@ const RandomWordGenerator = ({
     setTimeout(() => {
       setIsLoading(false);
       setWord(randomElement);
-    }, 1200);
+    }, 600);
   };
 
   const flipCard = word => {

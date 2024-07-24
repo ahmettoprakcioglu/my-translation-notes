@@ -13,7 +13,7 @@ const MyNotes = () => {
 
   return (
     <div>
-      <Table translationNotes={translationNotes} />
+      <Table translationNotes={translationNotes} isLoading={isLoading} />
     </div>
   );
 };

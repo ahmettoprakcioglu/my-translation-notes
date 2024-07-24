@@ -1,10 +1,28 @@
 import { useForm } from 'react-hook-form';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { addTranslationNotes } from '../services/apiNotes';
+import toast from 'react-hot-toast';
+
 
 const Form = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const queryClient = useQueryClient();
+
+  
+  const { mutate, isLoading } = useMutation({
+    mutationFn: addTranslationNotes,
+    onSuccess: () => {
+      toast.success('New note successfully added');
+      queryClient.invalidateQueries({
+        queryKey: ['translation-notes']
+      });
+      reset();
+    },
+    onError: err => toast.error(err.message)
+  });
 
   const onSubmit = data => {
-    console.log('data: ', data);
+    mutate(data);
   };
 
   return (
@@ -48,8 +66,12 @@ const Form = () => {
         </label>
       </div>
       <div className="flex gap-4">
-        <button className="btn btn-neutral" type="reset">Reset</button>
-        <button className="btn btn-primary">Add Note</button>
+        <button className="btn" type="reset" disabled={`${isLoading ? 'disabled' : ''}`}>Reset</button>
+        <button className="btn btn-primary">
+          {isLoading ? (
+            <><span className="loading loading-spinner"></span><span>Adding</span></>
+          ) : 'Add Note'}
+        </button>
       </div>
     </form>
   );

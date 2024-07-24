@@ -1,16 +1,16 @@
-import { bool } from 'prop-types';
-import { useState } from 'react';
+import { bool, func, shape, string } from 'prop-types';
 import ReactCardFlip from 'react-card-flip';
 
 const CardFlip = ({
-  isLoading
+  isLoading,
+  randomTranslationElement,
+  isFlipped,
+  flipCard
 }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const flipCard = () => setIsFlipped(curr => !curr);
+  const { originalWord, translation } = randomTranslationElement;
 
   return (
-    <div className='cursor-pointer flex-1 w-full bg-primary rounded-md' onClick={flipCard}>
+    <div className='cursor-pointer flex-1 w-full bg-primary rounded-md' onClick={() =>flipCard(originalWord)}>
       {isLoading ? (
         <div className='flex h-full justify-center items-center'>
           <span className="loading loading-ring loading-lg text-primary-content"></span>
@@ -18,10 +18,10 @@ const CardFlip = ({
       ) : (
         <ReactCardFlip flipDirection="horizontal" containerClassName='h-full' isFlipped={isFlipped}>
           <div className='h-full flex items-center justify-center text-primary-content font-bold'>
-            <h1>Front</h1>
+            <h1>{originalWord || 'Please click the Pick button'}</h1>
           </div>
           <div className='h-full flex items-center justify-center text-primary-content font-bold'>
-            <h1>Back</h1>
+            <h1>{translation}</h1>
           </div>
         </ReactCardFlip>
       )}
@@ -32,9 +32,21 @@ const CardFlip = ({
 export default CardFlip;
 
 CardFlip.propTypes = {
-  isLoading: bool
+  isLoading: bool,
+  randomTranslationElement: shape({
+    originalWord: string,
+    translation: string
+  }),
+  isFlipped: bool,
+  flipCard: func
 };
 
 CardFlip.defaultProps = {
-  isLoading: false
+  isLoading: false,
+  randomTranslationElement: {
+    originalWord: '',
+    translation: ''
+  },
+  isFlipped: false,
+  flipCard: f => f
 };

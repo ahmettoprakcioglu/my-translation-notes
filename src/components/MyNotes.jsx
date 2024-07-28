@@ -12,9 +12,11 @@ const MyNotes = () => {
   });
 
   return (
-    <div>
-      <Table translationNotes={translationNotes} isLoading={isLoading} />
-    </div>
+    <>
+      <div>
+        <Table translationNotes={translationNotes} isLoading={isLoading} />
+      </div>
+    </>
   );
 };
 

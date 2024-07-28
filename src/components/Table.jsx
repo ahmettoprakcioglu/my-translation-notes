@@ -11,7 +11,7 @@ const Table = ({
       {isLoading ? (
         <TableSkeleton />
       ) : (
-        <div className="overflow-x-auto">
+        <div className="">
           <table className="table">
             <thead>
               <tr>

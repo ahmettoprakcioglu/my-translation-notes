@@ -23,5 +23,14 @@ To run this project, you will need to add the following environment variables to
 
 `VITE_API_URL: your_api_url_here`
 
-Replace your_api_key_here with your actual API key and your_api_url_here with the URL of your AP
+Replace your_api_key_here with your actual API key and your_api_url_here with the URL of your API.
+
+## Installation
+
+Install the project with npm
+
+```bash
+  npm install
+  npm run dev
+```
 

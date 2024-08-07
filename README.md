@@ -37,5 +37,5 @@ Install the project with npm
 
 **Client:** React, TanStack Query, TailwindCSS
 
-**Server:** Supabe
+**Server:** Supabase
 

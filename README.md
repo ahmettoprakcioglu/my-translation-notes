@@ -33,4 +33,9 @@ Install the project with npm
   npm install
   npm run dev
 ```
+## Tech Stack
+
+**Client:** React, TanStack Query, TailwindCSS
+
+**Server:** Supabe
 

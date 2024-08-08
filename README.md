@@ -47,7 +47,7 @@ Install the project with npm
 
 ### My Notes
 
-![my-notes](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-home-page.jpg)
+![my-notes](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-my-notes.jpg)
 
 ### Edit Note
 

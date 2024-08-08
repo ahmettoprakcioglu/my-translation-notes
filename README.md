@@ -39,3 +39,22 @@ Install the project with npm
 
 **Server:** Supabase
 
+## Screenshots
+
+### Homepage
+
+![home-page](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-home-page.jpg)
+
+### My Notes
+
+![my-notes](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-home-page.jpg)
+
+### Edit Note
+
+![edit-note](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-edit-note.jpg)
+
+
+### Delete Note
+
+![delete-note](https://github.com/ahmettoprakcioglu/my-translation-notes/blob/main/src/assets/project-ss/my-translation-notes-delete-note.jpg)
+

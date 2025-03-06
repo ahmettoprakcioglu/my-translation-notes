@@ -8,21 +8,18 @@ export async function getTranslationNotes({ page = 0, pageSize = 10, searchTerm 
     .from('translation-notes')
     .select('id', { count: 'exact', head: true });
 
-  // Eğer arama terimi varsa, filtreleme ekle
   if (searchTerm) {
     query = query.or(`originalWord.ilike.%${searchTerm}%,translation.ilike.%${searchTerm}%`);
   }
 
   const countQuery = await query;
 
-  // Veri sorgusu için yeni bir query oluştur
   let dataQuery = supabase
     .from('translation-notes')
     .select('*')
     .order('created_at', { ascending: false })
     .range(from, to);
 
-  // Aynı filtrelemeyi veri sorgusu için de uygula
   if (searchTerm) {
     dataQuery = dataQuery.or(`originalWord.ilike.%${searchTerm}%,translation.ilike.%${searchTerm}%`);
   }
@@ -86,7 +83,6 @@ export async function deleteNote(id) {
 }
 
 export async function getRandomTranslationNote() {
-  // Önce toplam kayıt sayısını al
   const { count, error: countError } = await supabase
     .from('translation-notes')
     .select('*', { count: 'exact', head: true });
@@ -96,10 +92,8 @@ export async function getRandomTranslationNote() {
     throw new Error('Could not get total count');
   }
 
-  // Rastgele bir offset değeri hesapla
   const randomOffset = Math.floor(Math.random() * count);
 
-  // Rastgele seçilen offsetten 1 kayıt getir
   const { data, error } = await supabase
     .from('translation-notes')
     .select('*')

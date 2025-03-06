@@ -85,16 +85,13 @@ const Table = ({
     let value = e.target.value;
     const maxPage = table.getPageCount();
     
-    // Boş input kontrolü
     if (value === '') {
       setPageInput(value);
       return;
     }
 
-    // Sayıya çevirme
     value = parseInt(value);
 
-    // Validasyon ve sınırlama
     if (value < 1) value = 1;
     if (value > maxPage) value = maxPage;
     
